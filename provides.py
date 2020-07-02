@@ -131,6 +131,10 @@ class IntegrationRequest:
             return False
         saved_hash = unitdata.kv().get(self._hash_key)
         result = saved_hash != self.hash
+        if not result and saved_hash and not self._is_completed:
+            # Mark as completed all requests, which come from the same EC2
+            # and require the same set of permissions and permissions were already granted.
+            self.mark_completed()
         return result
 
     def mark_completed(self):
@@ -161,6 +165,11 @@ class IntegrationRequest:
         The name of the application making the request.
         """
         return self._unit.application_name
+
+    @property
+    def _is_completed(self):
+        completed = self._unit.relation.to_publish.get('completed', {})
+        return self.instance_id and completed.get(self.instance_id) == self.hash
 
     @property
     def _requested(self):
