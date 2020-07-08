@@ -14,7 +14,7 @@ The flags that are set by the provides side of this interface are:
 import json
 from hashlib import sha256
 
-from charmhelpers.core import unitdata
+from charmhelpers.core import hookenv, unitdata
 
 from charms.reactive import Endpoint
 from charms.reactive import when
@@ -51,8 +51,15 @@ class AWSIntegrationProvides(Endpoint):
 
     @when('endpoint.{endpoint_name}.changed')
     def check_requests(self):
-        requests = self.requests
-        toggle_flag(self.expand_name('requested'), len(requests) > 0)
+        unfulfilled_requests = False
+        for request in self.all_requests:
+            if request.changed:
+                hookenv.log(f'Marking request for processing for {request.unit_name} from {request.instance_id}')
+                unfulfilled_requests = True
+            elif not request.is_completed and request.completed_for_instance:
+                request.mark_completed()
+                hookenv.log(f'Marking request as completed for {request.unit_name} from {request.instance_id}')
+        toggle_flag(self.expand_name('requested'), unfulfilled_requests)
         clear_flag(self.expand_name('changed'))
 
     @when('endpoint.{endpoint_name}.departed')
@@ -130,8 +137,7 @@ class IntegrationRequest:
         if not (self.instance_id and self._requested):
             return False
         saved_hash = unitdata.kv().get(self._hash_key)
-        result = saved_hash != self.hash
-        return result
+        return saved_hash != self.hash
 
     def mark_completed(self):
         """
@@ -161,6 +167,16 @@ class IntegrationRequest:
         The name of the application making the request.
         """
         return self._unit.application_name
+
+    @property
+    def completed_for_instance(self):
+        instance_hash = unitdata.kv().get(self._hash_key)
+        return self.instance_id and self._requested and instance_hash and instance_hash == self.hash
+
+    @property
+    def is_completed(self):
+        completed = self._unit.relation.to_publish.get('completed', {})
+        return completed.get(self.instance_id) == self.hash
 
     @property
     def _requested(self):
