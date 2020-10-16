@@ -260,3 +260,27 @@ class AWSIntegrationRequires(Endpoint):
             'enable-object-storage-management': True,
             'object-storage-management-patterns': patterns,
         })
+
+    def enable_ses_readonly(self):
+        """
+        Request readonly for SES.
+        """
+        self._request({'enable-ses-readonly': True})
+
+    def enable_ses_fullaccess(self):
+        """
+        Request fullaccess for SES.
+        """
+        self._request({'enable-ses-fullaccess': True})
+
+    def enable_sns_readonly(self):
+        """
+        Request readonly for SNS.
+        """
+        self._request({'enable-sns-readonly': True})
+
+    def enable_sns_fullaccess(self):
+        """
+        Request fullaccess for SNS.
+        """
+        self._request({'enable-sns-fullaccess': True})

@@ -108,6 +108,38 @@ AWSIntegrationRequires.enable_acm_fullaccess(self)
 
 Request fullaccess for ACM.
 
+<h2 id="requires.AWSIntegrationRequires.enable_ses_readonly">enable_ses_readonly</h2>
+
+```python
+AWSIntegrationRequires.enable_ses_readonly(self)
+```
+
+Request readonly for SES.
+
+<h2 id="requires.AWSIntegrationRequires.enable_ses_fullaccess">enable_ses_fullaccess</h2>
+
+```python
+AWSIntegrationRequires.enable_ses_fullaccess(self)
+```
+
+Request fullaccess for SES.
+
+<h2 id="requires.AWSIntegrationRequires.enable_sns_readonly">enable_sns_readonly</h2>
+
+```python
+AWSIntegrationRequires.enable_sns_readonly(self)
+```
+
+Request readonly for SNS.
+
+<h2 id="requires.AWSIntegrationRequires.enable_sns_fullaccess">enable_sns_fullaccess</h2>
+
+```python
+AWSIntegrationRequires.enable_sns_fullaccess(self)
+```
+
+Request fullaccess for SNS.
+
 <h2 id="requires.AWSIntegrationRequires.enable_instance_inspection">enable_instance_inspection</h2>
 
 ```python

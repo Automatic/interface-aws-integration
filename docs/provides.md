@@ -156,6 +156,26 @@ Flag indicating whether object storage access was requested.
 
 Flag indicating whether object storage management was requested.
 
+<h2 id="provides.IntegrationRequest.requested_ses_readonly">requested_ses_readonly</h2>
+
+
+Flag indicating whether SES read-only access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_ses_fullaccess">requested_ses_fullaccess</h2>
+
+
+Flag indicating whether SES full access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_sns_readonly">requested_sns_readonly</h2>
+
+
+Flag indicating whether SNS read-only access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_sns_fullaccess">requested_sns_fullaccess</h2>
+
+
+Flag indicating whether SNS full access was requested.
+
 <h2 id="provides.IntegrationRequest.unit_name">unit_name</h2>
 
 

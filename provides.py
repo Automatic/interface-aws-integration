@@ -302,3 +302,31 @@ class IntegrationRequest:
         """
         return list(
             self._unit.received['object-storage-management-patterns'] or [])
+
+    @property
+    def requested_ses_readonly(self):
+        """
+        Flag indicating whether ses readonly was requested.
+        """
+        return bool(self._unit.received['enable-ses-readonly'])
+
+    @property
+    def requested_ses_fullaccess(self):
+        """
+        Flag indicating whether ses fullaccess was requested.
+        """
+        return bool(self._unit.received['enable-ses-fullaccess'])
+
+    @property
+    def requested_sns_readonly(self):
+        """
+        Flag indicating whether sns readonly was requested.
+        """
+        return bool(self._unit.received['enable-sns-readonly'])
+
+    @property
+    def requested_sns_fullaccess(self):
+        """
+        Flag indicating whether sns fullaccess was requested.
+        """
+        return bool(self._unit.received['enable-sns-fullaccess'])
