@@ -330,3 +330,31 @@ class IntegrationRequest:
         Flag indicating whether sns fullaccess was requested.
         """
         return bool(self._unit.received['enable-sns-fullaccess'])
+
+    @property
+    def requested_mobiletargeting_readonly(self):
+        """
+        Flag indicating whether pinpoint mobiletargeting readonly was requested.
+        """
+        return bool(self._unit.received['enable-mobiletargeting-readonly'])
+
+    @property
+    def requested_mobiletargeting_fullaccess(self):
+        """
+        Flag indicating whether pinpoint mobiletargeting fullaccess was requested.
+        """
+        return bool(self._unit.received['enable-mobiletargeting-fullaccess'])
+
+    @property
+    def requested_sms_voice_readonly(self):
+        """
+        Flag indicating whether pinpoint sms voice readonly was requested.
+        """
+        return bool(self._unit.received['enable-sms-voice-readonly'])
+
+    @property
+    def requested_sms_voice_fullaccess(self):
+        """
+        Flag indicating whether pinpoint sms voice fullaccess was requested.
+        """
+        return bool(self._unit.received['enable-sms-voice-fullaccess'])

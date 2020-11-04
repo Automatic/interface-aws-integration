@@ -140,6 +140,38 @@ AWSIntegrationRequires.enable_sns_fullaccess(self)
 
 Request fullaccess for SNS.
 
+<h2 id="requires.AWSIntegrationRequires.enable_mobiletargeting_readonly">enable_mobiletargeting_readonly</h2>
+
+```python
+AWSIntegrationRequires.enable_mobiletargeting_readonly(self)
+```
+
+Request readonly for Pinpoint mobietargeting.
+
+<h2 id="requires.AWSIntegrationRequires.enable_mobiletargeting_fullaccess">enable_mobiletargeting_fullaccess</h2>
+
+```python
+AWSIntegrationRequires.enable_mobiletargeting_fullaccess(self)
+```
+
+Request fullaccess for Pinpoint mobiletargeting.
+
+<h2 id="requires.AWSIntegrationRequires.enable_sms_voice_readonly">enable_sms_voice_readonly</h2>
+
+```python
+AWSIntegrationRequires.enable_sms_voice_readonly(self)
+```
+
+Request readonly for Pinpoint sms-voice.
+
+<h2 id="requires.AWSIntegrationRequires.enable_sms_voice_fullaccess">enable_sms_voice_fullaccess</h2>
+
+```python
+AWSIntegrationRequires.enable_sms_voice_fullaccess(self)
+```
+
+Request fullaccess for Pinpoint sms-voice.
+
 <h2 id="requires.AWSIntegrationRequires.enable_instance_inspection">enable_instance_inspection</h2>
 
 ```python
