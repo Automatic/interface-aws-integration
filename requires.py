@@ -284,3 +284,28 @@ class AWSIntegrationRequires(Endpoint):
         Request fullaccess for SNS.
         """
         self._request({'enable-sns-fullaccess': True})
+
+    def enable_mobiletargeting_readonly(self):
+        """
+        Request readonly for mobiletargeting.
+        """
+        self._request({'enable-mobiletargeting-readonly': True})
+
+    def enable_mobiletargeting_fullaccess(self):
+        """
+        Request fullaccess for mobiletargeting.
+        """
+        self._request({'enable-mobiletargeting-fullaccess': True})
+
+    def enable_sms_voice_readonly(self):
+        """
+        Request readonly for sms-voice.
+        """
+        self._request({'enable-sms-voice-readonly': True})
+
+    def enable_sms_voice_fullaccess(self):
+        """
+        Request fullaccess for sms-voice.
+        """
+        self._request({'enable-sms-voice-fullaccess': True})
+

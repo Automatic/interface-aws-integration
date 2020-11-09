@@ -176,6 +176,26 @@ Flag indicating whether SNS read-only access was requested.
 
 Flag indicating whether SNS full access was requested.
 
+<h2 id="provides.IntegrationRequest.requested_mobiletargeting_readonly">requested_mobiletargeting_readonly</h2>
+
+
+Flag indicating whether Pinpoint mobiletargeting read-only access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_mobiletargeting_fullaccess">requested_mobiletargeting_fullaccess</h2>
+
+
+Flag indicating whether Pinpoint mobiletargeting full access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_sms_voice_readonly">requested_sms_voice_readonly</h2>
+
+
+Flag indicating whether Pinpoint sms-voice read-only access was requested.
+
+<h2 id="provides.IntegrationRequest.requested_sms_voice_fullaccess">requested_sms_voice_fullaccess</h2>
+
+
+Flag indicating whether Pinpoint sms-voice full access was requested.
+
 <h2 id="provides.IntegrationRequest.unit_name">unit_name</h2>
 
 
